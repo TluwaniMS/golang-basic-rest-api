@@ -3,11 +3,14 @@ package first_controller
 import (
 	"net/http"
 	"encoding/json"
+	"basic-go-rest-api/auxiliaries"
 )
 
 func GetHandler(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("Content-Type", "application/json")
 	response.WriteHeader(http.StatusOK)
+
+	message := auxiliaries.GenerateResponseMessage("")
 }
 
 func PostHandler(response http.ResponseWriter, request *http.Request) {
