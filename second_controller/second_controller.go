@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"github.com/gorilla/mux"
 )
 
 func GetHandler(response http.ResponseWriter, request *http.Request) {
@@ -38,9 +39,13 @@ func PostHandler(response http.ResponseWriter, request *http.Request) {
 }
 
 func PutHandler(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/json")
+	response.WriteHeader(http.StatusOK)
 
-}
+	id := mux.Vars(request)["id"]
+	gender := mux.Vars(request)["gender"]
 
-func DeleteHandler(response http.ResponseWriter, request *http.Request) {
+	message := auxiliaries.GenerateResponseMessage("The id provided is: " + id + " and the gender is: " + gender + " from the second controller.")
 
+	response.Write(message)
 }
