@@ -32,7 +32,7 @@ func PostHandler(response http.ResponseWriter, request *http.Request) {
 		fmt.Println("There was an error.")
 	}
 
-	message := auxiliaries.GenerateResponseMessage("Hello " + person.Name + " " + person.Surname + " " + ", this is a response from the first controller.")
+	message := auxiliaries.GenerateResponseMessage("Hello " + person.Name + " " + person.Surname + ", this is a response from the first controller.")
 
 	response.Write(message)
 }
