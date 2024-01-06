@@ -1,19 +1,22 @@
 package first_controller
 
-import ("net/http")
+import (
+	"net/http"
+	"encoding/json"
+)
 
-func GetHandler(response http.ResponseWriter,request *http.Request) {
-	
-}
-
-func PostHandler(response http.ResponseWriter,request *http.Request) {
-
-}
-
-func PutHandler(response http.ResponseWriter,request *http.Request) {
+func GetHandler(response http.ResponseWriter, request *http.Request) {
 
 }
 
-func PostHandler(response http.ResponseWriter,request *http.Request) {
+func PostHandler(response http.ResponseWriter, request *http.Request) {
+
+}
+
+func PutHandler(response http.ResponseWriter, request *http.Request) {
+
+}
+
+func PostHandler(response http.ResponseWriter, request *http.Request) {
 
 }

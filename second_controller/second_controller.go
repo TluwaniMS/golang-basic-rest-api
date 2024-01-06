@@ -1,6 +1,9 @@
 package second_controller
 
-import ("net/http")
+import (
+	"net/http"
+	"encoding/json"
+)
 
 func GetHandler(response http.ResponseWriter,request *http.Request) {
 
