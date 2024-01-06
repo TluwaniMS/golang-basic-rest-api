@@ -3,6 +3,7 @@ package first_controller
 import (
 	"net/http"
 	"basic-go-rest-api/auxiliaries"
+	"io"
 )
 
 func GetHandler(response http.ResponseWriter, request *http.Request) {
@@ -15,6 +16,14 @@ func GetHandler(response http.ResponseWriter, request *http.Request) {
 }
 
 func PostHandler(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/json")
+	response.WriteHeader(http.StatusOK)
+
+	body,error = io.ReadAll(request.body)
+
+	if error != nil{
+		
+	}
 
 }
 
