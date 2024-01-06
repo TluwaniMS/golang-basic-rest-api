@@ -25,5 +25,8 @@ func ConfigureRoutes() *mux.Router {
 	firstController.HandleFunc("", first_controller.PostHandler).Methods("POST")
 	secondController.HandleFunc("", second_controller.PostHandler).Methods("POST")
 
+	firstController.HandleFunc("/{id}/{gender}", first_controller.PutHandler).Methods("PUT")
+	secondController.HandleFunc("/{id}/{gender}", second_controller.PutHandler).Methods("PUT")
+
 	return router
 }
