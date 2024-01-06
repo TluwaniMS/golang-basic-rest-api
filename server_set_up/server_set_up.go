@@ -3,15 +3,14 @@ package server_set_up
 import (
 	"basic-go-rest-api/first_controller"
 	"basic-go-rest-api/second_controller"
-	"github.com/gorilla/mux"
 	"net/http"
-	"log"
+	"github.com/gorilla/mux"
 )
 
 func StartServer() {
 	router := ConfigureRoutes()
 
-	http.ListenAndServe(":3000",router)
+	http.ListenAndServe(":3000", router)
 }
 
 func ConfigureRoutes() *mux.Router {
@@ -20,8 +19,8 @@ func ConfigureRoutes() *mux.Router {
 	firstController := router.PathPrefix("/api/first-controller").Subrouter()
 	secondController := router.PathPrefix("/api/second-controller").Subrouter()
 
-	firstController.HandleFunc("/", first_controller.GetHandler).Methods("GET")
-	secondController.HandleFunc("/", second_controller.GetHandler).Methods("GET")
+	firstController.HandleFunc("", first_controller.GetHandler).Methods("GET")
+	secondController.HandleFunc("", second_controller.GetHandler).Methods("GET")
 
 	return router
 }

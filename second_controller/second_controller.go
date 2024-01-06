@@ -2,7 +2,6 @@ package second_controller
 
 import (
 	"net/http"
-	"encoding/json"
 	"basic-go-rest-api/auxiliaries"
 )
 
