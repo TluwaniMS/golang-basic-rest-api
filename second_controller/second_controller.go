@@ -10,7 +10,7 @@ func GetHandler(response http.ResponseWriter,request *http.Request) {
 	response.Header().Set("Content-Type", "application/json")
 	response.WriteHeader(http.StatusOK)
 
-	message := auxiliaries.GenerateResponseMessage("")
+	message := auxiliaries.GenerateResponseMessage("Response from Get Method on the Second Controller ;) ...!!")
 }
 
 func PostHandler(response http.ResponseWriter,request *http.Request) {

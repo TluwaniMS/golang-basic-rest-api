@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"basic-go-rest-api/server_set_up"
+)
 
 func main() {
-	fmt.Println("Hello Rest!!!")
+	server_set_up.StartServer()
 }
