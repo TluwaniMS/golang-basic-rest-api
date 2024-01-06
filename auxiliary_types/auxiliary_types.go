@@ -7,6 +7,4 @@ type ResponseMessage struct {
 type Person struct {
 	Name    string `json:"name"`
 	Surname string `json:"surname"`
-	Gender  string `json:"gender"`
-	Age     int    `json:"age"`
 }
