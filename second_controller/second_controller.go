@@ -1,17 +1,19 @@
 package second_controller
 
-func GetHandler() {
+import ("net/http")
+
+func GetHandler(response http.ResponseWriter,request *http.Request) {
 
 }
 
-func PostHandler() {
+func PostHandler(response http.ResponseWriter,request *http.Request) {
 
 }
 
-func PutHandler() {
+func PutHandler(response http.ResponseWriter,request *http.Request) {
 
 }
 
-func PostHandler() {
+func PostHandler(response http.ResponseWriter,request *http.Request) {
 
 }
