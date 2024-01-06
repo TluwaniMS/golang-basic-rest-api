@@ -2,13 +2,11 @@ package auxiliaries
 
 import (
 	"encoding/json"
+	"basic-go-rest-api/auxiliary_types"
 )
 
-type ResponseMessage struct {
-	Message string `json:"message"`
-}
 
-func GenerateResponseMessage(message string) (responseMessage ResponseMessage){
+func GenerateResponseMessage(message string) (responseMessage auxiliary_types.ResponseMessage){
 	responseMessage,error := json.Marshal(message)
 
 	return 
