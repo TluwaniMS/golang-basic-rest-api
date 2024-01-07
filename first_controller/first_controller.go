@@ -49,3 +49,15 @@ func PutHandler(response http.ResponseWriter, request *http.Request) {
 
 	response.Write(message)
 }
+
+func DeletHandler(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/json")
+	response.WriteHeader(http.StatusOK)
+
+	id := mux.Vars(request)["id"]
+	gender := mux.Vars(request)["gender"]
+
+	message := auxiliaries.GenerateResponseMessage("The id provided for deletion is :" + id + " and the gender is: " + gender + " from the first controller.")
+
+	response.Write(message)
+}

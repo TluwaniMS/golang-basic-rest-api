@@ -45,6 +45,9 @@ func ConfigureRoutes() *mux.Router {
 	firstController.HandleFunc("/{id}/{gender}", first_controller.PutHandler).Methods("PUT")
 	secondController.HandleFunc("/{id}/{gender}", second_controller.PutHandler).Methods("PUT")
 
+	firstController.HandleFunc("/{id}/{gender}", first_controller.DeletHandler).Methods("DELETE")
+	secondController.HandleFunc("/{id}/{gender}", second_controller.DeletHandler).Methods("DELETE")
+
 	log.Println("Router configuration has been completed successfuly.")
 
 	return router
