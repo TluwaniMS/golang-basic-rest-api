@@ -6,12 +6,27 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	"log"
+	"os"
+	"time"
 )
 
 func StartServer() {
+	PORT := os.Getenv("PORT")
+
+	if PORT == ""{
+		PORT = "3000"
+	}
+
 	router := ConfigureRoutes()
 
-	http.ListenAndServe(":3000", router)
+	server := &http.Server{
+		Addr:           ":" + PORT,
+		Handler:        router,
+		ReadTimeout:    10 * time.Second,
+		WriteTimeout:   10 * time.Second,
+	}
+
+	server.ListenAndServe()
 }
 
 func ConfigureRoutes() *mux.Router {
