@@ -5,6 +5,7 @@ import (
 	"basic-go-rest-api/second_controller"
 	"net/http"
 	"github.com/gorilla/mux"
+	"log"
 )
 
 func StartServer() {
@@ -14,6 +15,7 @@ func StartServer() {
 }
 
 func ConfigureRoutes() *mux.Router {
+	log.Println("Starting with Route Configuration...")
 	router := mux.NewRouter()
 
 	firstController := router.PathPrefix("/api/first-controller").Subrouter()
@@ -27,6 +29,8 @@ func ConfigureRoutes() *mux.Router {
 
 	firstController.HandleFunc("/{id}/{gender}", first_controller.PutHandler).Methods("PUT")
 	secondController.HandleFunc("/{id}/{gender}", second_controller.PutHandler).Methods("PUT")
+
+	log.Println("Router configuration has been completed successfuly.")
 
 	return router
 }
