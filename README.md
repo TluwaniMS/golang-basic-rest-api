@@ -1,1 +1,1 @@
-# golang-rest-api
+# Golang basic Rest API
