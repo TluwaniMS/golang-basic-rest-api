@@ -7,3 +7,15 @@ This repository is a simple project I initiated to explore the process of buildi
 ## Software(s) required:
 
 * [Golang](https://go.dev/doc/install)
+
+## Project Set-up:
+
+* #### Step 1: 
+
+Navigate to the root directory of the project and execute:
+
+```
+go run .
+```
+
+This will initialize the REST API server.
