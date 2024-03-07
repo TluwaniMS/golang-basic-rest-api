@@ -5,6 +5,7 @@ import (
 	"basic-go-rest-api/second_controller"
 	"net/http"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/handlers"
 	"log"
 	"os"
 	"time"
@@ -19,9 +20,11 @@ func StartServer() {
 
 	router := ConfigureRoutes()
 
+	loggedRouter := handlers.LoggingHandler(os.Stdout, router)
+
 	server := &http.Server{
 		Addr:           ":" + PORT,
-		Handler:        router,
+		Handler:        loggedRouter,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,
 	}
